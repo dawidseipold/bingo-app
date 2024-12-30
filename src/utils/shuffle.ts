@@ -1,0 +1,14 @@
+import { Item } from "../stores/items";
+
+export function shuffle(array: Item[]): Item[] {
+  const newArray = array.map(item => ({ ...item }));
+
+  for (let i = newArray.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+  }
+
+
+
+  return newArray;
+}
