@@ -1,4 +1,6 @@
 import plugin from 'tailwindcss'
+import { resolve } from 'node:path'
+import cssplugin from './cssplugin'
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -13,13 +15,15 @@ export default {
         lg: '0 8px 16px var(--tw-shadow-color)',
       },
       colors: {
-        custom: {
-          background: {
-            primary: "#0b0b0b",
-            secondary: "#171717",
-            tertiary: "#282828"
-          }
-        }
+        background: {
+          100: "hsl(var(--background-100))",
+          200: "hsl(var(--background-200))",
+          300: "hsl(var(--background-300))",
+        },
+        border: {
+          100: "#2b2d2e"
+        },
+        brand: "#a095e8"
       }
     },
   },
@@ -34,6 +38,7 @@ export default {
         { values: theme('textShadow') }
       )
     }),
+    cssplugin(resolve(__dirname, './src/index.css'))
   ],
 }
 
