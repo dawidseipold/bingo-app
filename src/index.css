@@ -27,5 +27,7 @@
     border-color: theme('colors.border.100');
     border-radius: theme('borderRadius.3xl');
     padding: theme('padding.4');
+    background-color: theme('colors.background.200');
+    height: calc(theme('height.dvh') - theme('padding.16'))
   }
 }
