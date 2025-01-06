@@ -1,7 +1,8 @@
 import { createStore } from "solid-js/store"
 
 export interface Item {
-  value: string
+  id: string;
+  value: string;
 }
 
 export interface ItemsStore {
@@ -21,6 +22,7 @@ export const addItem = (item: Item) => {
 
 export const removeItem = (item: Item) => {
   setItems("items", (prevItems: Item[]) =>
-    prevItems.filter(prevItem => prevItem.value !== item.value)
+    prevItems.filter(prevItem => prevItem.id !== item.id)
   )
 }
+
