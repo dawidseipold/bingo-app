@@ -5,6 +5,7 @@ import { For } from 'solid-js';
 import { items } from '../stores/items';
 import { NewElementForm } from './forms/NewElementForm';
 import { ElementsList } from './ElementsList';
+import { GridSizeForm } from './forms/GridSizeForm';
 
 
 const MENU_ITEMS = [
@@ -20,9 +21,9 @@ const MENU_ITEMS = [
 
 export const Menu = () => {
   return (
-    <aside class="flex flex-col gap-y-16 section w-[512px]">
+    <aside class="flex flex-col gap-y-16 section pt-0 w-[512px] overflow-scroll">
       <Tabs aria-label="menu navigation" class="flex flex-col gap-y-4">
-        <Tabs.List class="flex flex-col">
+        <Tabs.List class="flex flex-col sticky top-0 bg-background-200 z-50 pt-4">
           <ul class="flex gap-x-2">
             <For each={MENU_ITEMS}>
               {(item, _) => (
@@ -39,6 +40,7 @@ export const Menu = () => {
         </Tabs.List>
 
         <Tabs.Content value="bingo" class="flex flex-col gap-y-4">
+          <GridSizeForm />
           <NewElementForm />
           <ElementsList />
         </Tabs.Content>
