@@ -38,22 +38,16 @@ export const ElementsList = () => {
                         <Dialog.Portal>
                           <Dialog.Overlay class="bg-black/75 w-dvw h-dvh absolute left-0 top-0" />
 
-                          <Dialog.Content class="section absolute inset-1/2 h-max w-[512px] -translate-x-1/2 -translate-y-1/2">
+                          <Dialog.Content class="section absolute inset-1/2 flex flex-col gap-y-4 h-max w-[512px] -translate-x-1/2 -translate-y-1/2">
                             <Dialog.CloseButton class="absolute right-2 top-2 flex items-center justify-center p-2 rounded-full bg-rose-500 hover:bg-rose-500/75 text-white">
                               <Close class="w-4 h-4" />
                             </Dialog.CloseButton>
 
-                            <Dialog.Title>
-                              Test
+                            <Dialog.Title class="font-bold text-2xl">
+                              Edit
                             </Dialog.Title>
 
-                            <Dialog.Description>
-                              Edit the things you want to change in the element
-                            </Dialog.Description>
-
-                            <div>
-                              <EditElementForm />
-                            </div>
+                            <EditElementForm item={item} />
 
                           </Dialog.Content>
                         </Dialog.Portal>
