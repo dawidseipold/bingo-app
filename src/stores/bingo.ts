@@ -18,12 +18,16 @@ export const sizeSchema = v.object({
 
 export type Size = v.InferInput<typeof sizeSchema>;
 
+export type Mode = 'manual' | 'auto';
+
 export interface BingoStore {
+  mode: Mode,
   items: Item[],
   size: Size
 }
 
 export const [bingo, setBingo] = createStore<BingoStore>({
+  mode: 'auto',
   items: [],
   size: {
     x: 0,
@@ -33,4 +37,8 @@ export const [bingo, setBingo] = createStore<BingoStore>({
 
 export const changeSize = (newSize: Size) => {
   setBingo("size", newSize)
+}
+
+export const changeMode = (newMode: Mode) => {
+  setBingo("mode", newMode)
 }
