@@ -6,6 +6,7 @@ import { items } from '../stores/items';
 import { NewElementForm } from './forms/NewElementForm';
 import { ElementsList } from './ElementsList';
 import { GridSizeForm } from './forms/GridSizeForm';
+import { ModeForm } from './forms/ModeForm';
 
 
 const MENU_ITEMS = [
@@ -40,6 +41,7 @@ export const Menu = () => {
         </Tabs.List>
 
         <Tabs.Content value="bingo" class="flex flex-col gap-y-4">
+          <ModeForm />
           <GridSizeForm />
           <NewElementForm />
           <ElementsList />
