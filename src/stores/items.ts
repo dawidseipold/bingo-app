@@ -25,4 +25,11 @@ export const removeItem = (item: Item) => {
     prevItems.filter(prevItem => prevItem.id !== item.id)
   )
 }
+export const editItem = (item: Item) => {
+  setItems("items", (prevItems: Item[]) =>
+    prevItems.map((prevItem: Item) =>
+      prevItem.id === item.id ? item : prevItem
+    )
+  )
+}
 
