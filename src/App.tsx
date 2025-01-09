@@ -15,22 +15,22 @@ function App() {
 
       <div class="flex gap-x-8 w-full">
         <div class="flex w-full section">
-          {/* <Show when={shuffledItems().length > 0}> */}
-          <div
-            style={{
-              display: "grid",
-              "grid-template-columns": `repeat(${bingo.size.x}, 1fr)`,
-              "grid-template-rows": `repeat(${bingo.size.y}, 1fr)`
-            }}
-            class="w-max h-max gap-4 bg-blue-400/25 rounded-3xl p-4"
-          >
-            <For each={[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]}>
-              {(item) => (
-                <Tile text={"test"} />
-              )}
-            </For>
-          </div>
-          {/* </Show> */}
+          <Show when={bingo.items.length > 0}>
+            <div
+              style={{
+                display: "grid",
+                "grid-template-columns": `repeat(${bingo.size.x}, 1fr)`,
+                "grid-template-rows": `repeat(${bingo.size.y}, 1fr)`
+              }}
+              class="w-max h-max gap-4 bg-blue-400/25 rounded-3xl p-4"
+            >
+              <For each={bingo.items}>
+                {(item) => (
+                  <Tile text={item.value} />
+                )}
+              </For>
+            </div>
+          </Show>
         </div>
 
         <Menu />

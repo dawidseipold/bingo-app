@@ -1,9 +1,10 @@
 import { Select } from "@kobalte/core/select"
 import { createForm } from "@tanstack/solid-form"
 import { FaSolidCheck as Check, FaSolidChevronDown as ChevronDown } from 'solid-icons/fa'
-import { changeSize, Size, sizeSchema } from "../../stores/bingo"
+import { changeSize, setBingoItems, Size, sizeSchema } from "../../stores/bingo"
 import { IoClose as X } from 'solid-icons/io'
 import * as v from 'valibot';
+import { items, setItems } from "../../stores/items"
 
 export const GridSizeForm = () => {
   const form = createForm<Size>(() => ({
@@ -12,7 +13,8 @@ export const GridSizeForm = () => {
       y: 5
     },
     onSubmit: async ({ value }) => {
-      changeSize(value)
+      changeSize(value);
+      setBingoItems(items.items)
     }
   }))
 
