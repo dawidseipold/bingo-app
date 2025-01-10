@@ -1,5 +1,5 @@
 import { createForm } from "@tanstack/solid-form"
-import { addItem, Item } from "../../stores/items"
+import { addItem, Item, itemSchema } from "../../stores/items"
 import { FaSolidArrowRightLong as ArrowRight } from 'solid-icons/fa'
 
 export const NewElementForm = () => {
@@ -27,6 +27,9 @@ export const NewElementForm = () => {
     >
       <form.Field
         name="value"
+        validators={{
+          onChange: itemSchema
+        }}
         children={(field) => (
           <>
             <label for={field().name} class="font-semibold">Add new element</label>
@@ -49,8 +52,6 @@ export const NewElementForm = () => {
           </>
         )}
       />
-
-
     </form>
   )
 }
