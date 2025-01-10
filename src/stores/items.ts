@@ -1,5 +1,6 @@
 import { createStore } from "solid-js/store"
 import * as v from 'valibot';
+import { setBingoItems } from "./bingo";
 
 export const itemSchema = v.pipe(
   v.string(),
@@ -25,12 +26,16 @@ export const addItem = (item: Item) => {
     ...prevItems,
     item
   ]);
+
+  setBingoItems(items.items)
 }
 
 export const removeItem = (item: Item) => {
   setItems("items", (prevItems: Item[]) =>
     prevItems.filter(prevItem => prevItem.id !== item.id)
   )
+
+  setBingoItems(items.items)
 }
 export const editItem = (item: Item) => {
   setItems("items", (prevItems: Item[]) =>
@@ -38,5 +43,7 @@ export const editItem = (item: Item) => {
       prevItem.id === item.id ? item : prevItem
     )
   )
+
+  setBingoItems(items.items)
 }
 
