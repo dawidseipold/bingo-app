@@ -1,4 +1,11 @@
 import { createStore } from "solid-js/store"
+import * as v from 'valibot';
+
+export const itemSchema = v.pipe(
+  v.string(),
+  v.nonEmpty("Item can't be empty"),
+  v.maxLength(64, "Item too long")
+);
 
 export interface Item {
   id: string;
