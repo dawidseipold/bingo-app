@@ -6,13 +6,13 @@ export const sizeSchema = v.object({
   x: v.pipe(
     v.number(),
     v.minValue(1),
-    v.maxValue(15)
+    v.maxValue(10)
 
   ),
   y: v.pipe(
     v.number(),
     v.minValue(1),
-    v.maxValue(15)
+    v.maxValue(10)
   )
 });
 
@@ -32,8 +32,8 @@ export const [bingo, setBingo] = createStore<BingoStore>({
   mode: 'auto',
   items: [],
   size: {
-    x: 0,
-    y: 0
+    x: 5,
+    y: 5
   }
 })
 
