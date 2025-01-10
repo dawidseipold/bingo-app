@@ -1,6 +1,7 @@
 import { createForm } from "@tanstack/solid-form"
-import { addItem, Item, itemSchema } from "../../stores/items"
+import { addItem, Item, items, itemSchema } from "../../stores/items"
 import { FaSolidArrowRightLong as ArrowRight } from 'solid-icons/fa'
+import { setBingoItems } from "../../stores/bingo"
 
 export const NewElementForm = () => {
   const form = createForm<Item>(() => ({
