@@ -22,7 +22,7 @@ const MENU_ITEMS = [
 
 export const Menu = () => {
   return (
-    <aside class="flex flex-col gap-y-16 section pt-0 w-[512px] overflow-scroll">
+    <aside class="flex flex-col gap-y-16 section pt-0 w-max min-w-[376px] overflow-scroll">
       <Tabs aria-label="menu navigation" class="flex flex-col gap-y-4">
         <Tabs.List class="flex flex-col sticky top-0 bg-background-200 z-50 pt-4">
           <ul class="flex gap-x-2">

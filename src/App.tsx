@@ -10,11 +10,9 @@ function App() {
   const items = () => itemsStore.items;
 
   return (
-    <main class="flex flex-col gap-y-8 p-8 items-center min-h-dvh bg-background-100">
-
-
-      <div class="flex gap-x-8 w-full">
-        <div class="flex w-full section">
+    <main class="w-dvw flex flex-col gap-y-8 p-8 items-center min-h-dvh bg-background-100">
+      <div class="flex justify-between gap-x-8 w-full">
+        <div class="flex rounded-3xl bg-background-200 w-full justify-center items-center p-4 max-h-[calc(100dvh-4rem)]">
           <Show when={bingo.items.length > 0}>
             <div
               style={{
@@ -22,7 +20,7 @@ function App() {
                 "grid-template-columns": `repeat(${bingo.size.x}, 1fr)`,
                 "grid-template-rows": `repeat(${bingo.size.y}, 1fr)`
               }}
-              class="w-max h-max gap-4 bg-blue-400/25 rounded-3xl p-4"
+              class="w-max h-max min-w-[50%] min-h-[50%] gap-4 bg-blue-400/25 rounded-2xl p-4 aspect-square"
             >
               <For each={bingo.items}>
                 {(item) => (
