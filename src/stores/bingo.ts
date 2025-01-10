@@ -46,8 +46,15 @@ export const changeMode = (newMode: Mode) => {
 }
 
 // TODO: If there's no items it should return an empty list (at least I think so, still need to wrap my mind around how I want it to work)
+
 export const setBingoItems = (newItems: Item[]) => {
   const totalSlots = bingo.size.x * bingo.size.y;
+
+  if (newItems.length === 0) {
+    setBingo("items", []);
+    return;
+  }
+
   const filledItems: BingoItem[] = newItems.slice(0, totalSlots).map(item => ({
     ...item,
     empty: false
@@ -63,3 +70,4 @@ export const setBingoItems = (newItems: Item[]) => {
 
   setBingo("items", filledItems);
 };
+
