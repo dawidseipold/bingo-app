@@ -18,7 +18,9 @@
     "vite-plugin-solid": "^2.11.0"
   },
   "dependencies": {
+    "@atlaskit/pragmatic-drag-and-drop": "^1.4.0",
     "@kobalte/core": "^0.13.7",
+    "@solidjs/router": "^0.15.2",
     "@tanstack/solid-form": "^0.41.0",
     "clsx": "^2.1.1",
     "solid-icons": "^1.1.0",
