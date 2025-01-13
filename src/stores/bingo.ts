@@ -18,7 +18,7 @@ export const sizeSchema = v.object({
 
 export type Size = v.InferInput<typeof sizeSchema>;
 export type Mode = 'manual' | 'auto';
-interface BingoItem extends Item {
+export interface BingoItem extends Item {
   empty: boolean
 }
 
