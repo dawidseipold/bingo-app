@@ -22,18 +22,12 @@ export const Cell: Component<CellProps> = (props) => {
   const rowIndex = Math.floor(props.index() / bingo.size.x);
   const colIndex = props.index() % bingo.size.x;
 
-  const size = `clamp(2rem, ${50 / Math.max(bingo.size.x, bingo.size.y)}%, 4rem)`
-
   return (
     <div
       class={cn(
         "flex items-center justify-center text-center rounded-2xl aspect-square w-full h-full",
         getCellColor(rowIndex, colIndex)
       )}
-    // style={{
-    //   width: size,
-    //   height: size
-    // }}
     >
       {item().value}
     </div>
