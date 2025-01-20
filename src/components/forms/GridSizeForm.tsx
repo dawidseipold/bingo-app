@@ -33,7 +33,7 @@ export const GridSizeForm = () => {
             onChange: v.pipe(
               v.number(),
               v.minValue(1, "Size must be at least 1"),
-              v.maxValue(15, "Size can't be bigger than 15")
+              v.maxValue(10, "Size can't be bigger than 10")
             ),
           }}
           children={(field) => (
@@ -45,7 +45,7 @@ export const GridSizeForm = () => {
               value={field().state.value}
               onBlur={field().handleBlur}
               onChange={(e) => {
-                const value = Math.min(Math.max(Number(e.currentTarget.value), 1), 15);
+                const value = Math.min(Math.max(Number(e.currentTarget.value), 1), 10);
                 field().handleChange(value);
 
                 form.handleSubmit();
@@ -68,7 +68,7 @@ export const GridSizeForm = () => {
               value={field().state.value}
               onBlur={field().handleBlur}
               onChange={(e) => {
-                const value = Math.min(Math.max(Number(e.currentTarget.value), 1), 15);
+                const value = Math.min(Math.max(Number(e.currentTarget.value), 1), 10);
                 field().handleChange(value);
 
                 form.handleSubmit();
