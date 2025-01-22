@@ -9,15 +9,21 @@ interface CellProps {
 
 export const Cell: Component<CellProps> = (props) => {
   const item = () => props.item;
-  const isBingoEven = (bingo.size.x * bingo.size.y) % 2 === 0;
+
+  const colorMap = {
+    blue: ['bg-blue-400', 'bg-blue-600'],
+    red: ['bg-red-400', 'bg-red-500'],
+    green: ['bg-green-400', 'bg-green-500'],
+    purple: ['bg-purple-400', 'bg-purple-500'],
+    orange: ['bg-orange-400', 'bg-orange-500'],
+    teal: ['bg-teal-400', 'bg-teal-500']
+  };
 
   const getCellColor = (rowIndex: number, colIndex: number) => {
-    if (isBingoEven) {
-      return (rowIndex % 2 === 0) ? (colIndex % 2 === 0 ? "bg-green-500" : "bg-blue-500") : (colIndex % 2 === 0 ? "bg-blue-500" : "bg-green-500");
-    } else {
-      return (rowIndex % 2 === 0) ? (colIndex % 2 === 0 ? "bg-green-500" : "bg-blue-500") : (colIndex % 2 === 0 ? "bg-blue-500" : "bg-green-500");
-    }
-  }
+    const colors = colorMap[bingo.color];
+
+    return (rowIndex + colIndex) % 2 === 0 ? colors[0] : colors[1];
+  };
 
   const rowIndex = Math.floor(props.index() / bingo.size.x);
   const colIndex = props.index() % bingo.size.x;
